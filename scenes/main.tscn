@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://cmc0yqbld48gh"]
+[gd_scene load_steps=3 format=3 uid="uid://cmc0yqbld48gh"]
+
+[ext_resource type="PackedScene" uid="uid://b3wdchhujwi5l" path="res://scenes/field.tscn" id="1_4dat0"]
+[ext_resource type="PackedScene" uid="uid://bdbbn1a6phoek" path="res://scenes/clipboard.tscn" id="2_2ef6h"]
 
 [node name="main" type="Node3D"]
+
+[node name="Field" parent="." instance=ExtResource("1_4dat0")]
+
+[node name="Clipboard" parent="." instance=ExtResource("2_2ef6h")]
