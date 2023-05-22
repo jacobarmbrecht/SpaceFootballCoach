@@ -1,10 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmc0yqbld48gh"]
+[gd_scene load_steps=5 format=3 uid="uid://cmc0yqbld48gh"]
 
 [ext_resource type="PackedScene" uid="uid://b3wdchhujwi5l" path="res://scenes/field.tscn" id="1_4dat0"]
-[ext_resource type="PackedScene" uid="uid://bdbbn1a6phoek" path="res://scenes/clipboard.tscn" id="2_2ef6h"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ygpn5"]
+sky_top_color = Color(0.180392, 0.12549, 0.262745, 1)
+ground_bottom_color = Color(0.282353, 0.117647, 0.101961, 1)
+
+[sub_resource type="Sky" id="Sky_vqcoe"]
+sky_material = SubResource("ProceduralSkyMaterial_ygpn5")
+
+[sub_resource type="Environment" id="Environment_y3kg5"]
+background_mode = 2
+sky = SubResource("Sky_vqcoe")
+sky_custom_fov = 113.0
 
 [node name="main" type="Node3D"]
 
 [node name="Field" parent="." instance=ExtResource("1_4dat0")]
 
-[node name="Clipboard" parent="." instance=ExtResource("2_2ef6h")]
+[node name="Coach" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.654635, 0.755945, 0, -0.755945, 0.654635, -0.0738983, 28, 27.5974)
+
+[node name="CoachCam" type="Camera3D" parent="Coach"]
+transform = Transform3D(1, 0, 0, 0, 0.880287, 0.474441, 0, -0.474441, 0.880287, 0, 26.6208, 5.78311)
+current = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_y3kg5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 0.00223406, 0.999997, 0, -0.999997, 0.00223406, -0.0619354, 90.9852, -0.391458)

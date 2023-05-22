@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://bdbbn1a6phoek"]
+[gd_scene load_steps=2 format=3 uid="uid://ba8cw0sed0vto"]
+
+[ext_resource type="PackedScene" uid="uid://jccgca2p3rkj" path="res://assets/blender/clipboard.glb" id="1_k1ij6"]
 
 [node name="Clipboard" type="Node3D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Graphics" type="Node3D" parent="CanvasLayer"]
+
+[node name="clipboard" parent="CanvasLayer/Graphics" instance=ExtResource("1_k1ij6")]
