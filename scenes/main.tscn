@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmc0yqbld48gh"]
+[gd_scene load_steps=6 format=3 uid="uid://cmc0yqbld48gh"]
 
 [ext_resource type="PackedScene" uid="uid://b3wdchhujwi5l" path="res://scenes/field.tscn" id="1_4dat0"]
+[ext_resource type="PackedScene" uid="uid://ctealpa7t1uop" path="res://scenes/coach.tscn" id="2_c0p21"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ygpn5"]
 sky_top_color = Color(0.180392, 0.12549, 0.262745, 1)
@@ -18,12 +19,8 @@ sky_custom_fov = 113.0
 
 [node name="Field" parent="." instance=ExtResource("1_4dat0")]
 
-[node name="Coach" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.654635, 0.755945, 0, -0.755945, 0.654635, -0.0738983, 28, 27.5974)
-
-[node name="CoachCam" type="Camera3D" parent="Coach"]
-transform = Transform3D(1, 0, 0, 0, 0.880287, 0.474441, 0, -0.474441, 0.880287, 0, 26.6208, 5.78311)
-current = true
+[node name="Coach" parent="." instance=ExtResource("2_c0p21")]
+transform = Transform3D(1, 0, 0, 0, 0.297724, 0.954652, 0, -0.954652, 0.297724, 0, 47.6293, 14.9227)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_y3kg5")
