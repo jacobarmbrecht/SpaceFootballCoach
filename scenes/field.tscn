@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3wdchhujwi5l"]
+
+[ext_resource type="Texture2D" uid="uid://bdb50fwy0jj2e" path="res://resources/grass_lowres.png" id="1_1o0qd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fv3wr"]
+albedo_texture = ExtResource("1_1o0qd")
+uv1_scale = Vector3(50, 50, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_giq25"]
+material = SubResource("StandardMaterial3D_fv3wr")
+size = Vector3(110, 2, 50)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pohqb"]
+
+[node name="Field" type="Node3D"]
+transform = Transform3D(1.00325, 0, 0, 0, 1.00325, 0, 0, 0, 1.00325, 0, 0, 0)
+
+[node name="field" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_giq25")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="field"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="field/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_pohqb")

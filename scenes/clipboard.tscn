@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba8cw0sed0vto"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wtv3x"]
+albedo_color = Color(0.121569, 0.482353, 0.431373, 1)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.1
+
+[sub_resource type="BoxMesh" id="BoxMesh_h7hcf"]
+material = SubResource("StandardMaterial3D_wtv3x")
+size = Vector3(1.1, 0.05, 0.5)
+
+[node name="Clipboard" type="Node3D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="clipboard" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_h7hcf")
