@@ -1,4 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba8cw0sed0vto"]
+[gd_scene load_steps=5 format=3 uid="uid://ba8cw0sed0vto"]
+
+[ext_resource type="Script" path="res://scripts/clipboard.gd" id="1_o5ipy"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_84mxt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wtv3x"]
 albedo_color = Color(0.121569, 0.482353, 0.431373, 1)
@@ -11,8 +15,16 @@ material = SubResource("StandardMaterial3D_wtv3x")
 size = Vector3(1.1, 0.05, 0.5)
 
 [node name="Clipboard" type="Node3D"]
+script = ExtResource("1_o5ipy")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Area3D" type="Area3D" parent="CanvasLayer"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CanvasLayer/Area3D"]
+shape = SubResource("ConcavePolygonShape3D_84mxt")
+
 [node name="clipboard" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_h7hcf")
+
+[connection signal="input_event" from="CanvasLayer/Area3D" to="." method="_input_event"]

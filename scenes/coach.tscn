@@ -1,11 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctealpa7t1uop"]
+[gd_scene load_steps=3 format=3 uid="uid://c4xss4ywyygo"]
 
-[ext_resource type="Script" path="res://scenes/coach.gd" id="1_jme4l"]
+[ext_resource type="Script" path="res://scripts/coach.gd" id="1_x0tgu"]
 [ext_resource type="PackedScene" uid="uid://ba8cw0sed0vto" path="res://scenes/clipboard.tscn" id="2_yl6gb"]
 
 [node name="Coach" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-script = ExtResource("1_jme4l")
+script = ExtResource("1_x0tgu")
 
 [node name="CoachCam" type="Camera3D" parent="."]
 current = true
