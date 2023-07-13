@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmc0yqbld48gh"]
+[gd_scene load_steps=8 format=3 uid="uid://cmc0yqbld48gh"]
 
 [ext_resource type="PackedScene" uid="uid://b3wdchhujwi5l" path="res://scenes/field.tscn" id="1_4dat0"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_8rcfh"]
 [ext_resource type="PackedScene" uid="uid://c4xss4ywyygo" path="res://scenes/coach.tscn" id="2_c0p21"]
-[ext_resource type="PackedScene" uid="uid://buoyir556phpp" path="res://scenes/player.tscn" id="3_3nd1w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ygpn5"]
 sky_top_color = Color(0.180392, 0.12549, 0.262745, 1)
@@ -16,12 +16,12 @@ background_mode = 2
 sky = SubResource("Sky_vqcoe")
 sky_custom_fov = 113.0
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_mqyd8"]
+vertices = PackedVector3Array(-47.9287, 1.49675, -24.5812, -54.6787, 1.49675, -24.5812, -54.6787, 1.49675, -18.5812, -54.6787, 1.49675, 18.4188, -54.6787, 1.49675, 24.6688, -47.9287, 1.49675, 24.6688, 54.5713, 1.49675, -18.5812, 54.5713, 1.49675, -24.5812, 47.5713, 1.49675, -24.5812, 47.5713, 1.49675, 24.6688, 54.5713, 1.49675, 24.6688, 54.5713, 1.49675, 18.4188, -47.9287, 1.49675, -24.5812, -54.6787, 1.49675, -18.5812, -54.6787, 1.49675, -12.3312, -41.1787, 1.49675, -24.5812, 54.5713, 1.49675, -12.3312, 54.5713, 1.49675, -18.5812, 47.5713, 1.49675, -24.5812, 40.8213, 1.49675, -24.5812, -54.6787, 1.49675, 12.1688, -54.6787, 1.49675, 18.4188, -47.9287, 1.49675, 24.6688, -41.1787, 1.49675, 24.6688, 47.5713, 1.49675, 24.6688, 54.5713, 1.49675, 18.4188, 54.5713, 1.49675, 12.1688, 40.8213, 1.49675, 24.6688, -20.6787, 1.49675, -24.5812, -27.4287, 1.49675, -24.5812, -54.6787, 1.49675, -0.0812492, 54.5713, 1.49675, -0.0812492, 27.0713, 1.49675, -24.5812, 20.0713, 1.49675, -24.5812, -54.6787, 1.49675, -0.0812492, -27.4287, 1.49675, 24.6688, -20.6787, 1.49675, 24.6688, 20.0713, 1.49675, 24.6688, 27.0713, 1.49675, 24.6688, 54.5713, 1.49675, -0.0812492, -41.1787, 1.49675, -24.5812, -54.6787, 1.49675, -12.3312, -54.6787, 1.49675, -6.33125, -34.4287, 1.49675, -24.5812, 54.5713, 1.49675, -6.33125, 54.5713, 1.49675, -12.3312, 40.8213, 1.49675, -24.5812, 33.8213, 1.49675, -24.5812, -54.6787, 1.49675, 5.91875, -54.6787, 1.49675, 12.1688, -41.1787, 1.49675, 24.6688, -34.4287, 1.49675, 24.6688, 40.8213, 1.49675, 24.6688, 54.5713, 1.49675, 12.1688, 54.5713, 1.49675, 5.91875, 33.8213, 1.49675, 24.6688, -13.9287, 1.49675, -24.5812, -20.6787, 1.49675, -24.5812, -54.6787, 1.49675, -0.0812492, 54.5713, 1.49675, -0.0812492, 20.0713, 1.49675, -24.5812, 13.3213, 1.49675, -24.5812, -54.6787, 1.49675, -0.0812492, -20.6787, 1.49675, 24.6688, -13.9287, 1.49675, 24.6688, 13.3213, 1.49675, 24.6688, 20.0713, 1.49675, 24.6688, 54.5713, 1.49675, -0.0812492, -34.4287, 1.49675, -24.5812, -54.6787, 1.49675, -6.33125, -54.6787, 1.49675, -0.0812492, -27.4287, 1.49675, -24.5812, -54.6787, 1.49675, -0.0812492, -54.6787, 1.49675, 5.91875, -34.4287, 1.49675, 24.6688, -27.4287, 1.49675, 24.6688, 54.5713, 1.49675, -0.0812492, 54.5713, 1.49675, -6.33125, 33.8213, 1.49675, -24.5812, 27.0713, 1.49675, -24.5812, 33.8213, 1.49675, 24.6688, 54.5713, 1.49675, 5.91875, 54.5713, 1.49675, -0.0812492, 27.0713, 1.49675, 24.6688, 13.3213, 1.49675, 24.6688, 54.5713, 1.49675, -0.0812492, 13.3213, 1.49675, -24.5812, 6.57125, 1.49675, -24.5812, 6.57125, 1.49675, 24.6688, -13.9287, 1.49675, -24.5812, -54.6787, 1.49675, -0.0812492, -13.9287, 1.49675, 24.6688, -7.17875, 1.49675, 24.6688, -7.17875, 1.49675, -24.5812, -0.178749, 1.49675, 24.6688, 6.57125, 1.49675, 24.6688, 6.57125, 1.49675, -24.5812, -0.178749, 1.49675, -24.5812, -7.17875, 1.49675, 24.6688, -0.178749, 1.49675, 24.6688, -0.178749, 1.49675, -24.5812, -7.17875, 1.49675, -24.5812)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(8, 7, 6), PackedInt32Array(11, 10, 9), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 15), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 19), PackedInt32Array(21, 20, 22), PackedInt32Array(22, 20, 23), PackedInt32Array(25, 24, 26), PackedInt32Array(26, 24, 27), PackedInt32Array(30, 29, 28), PackedInt32Array(33, 32, 31), PackedInt32Array(36, 35, 34), PackedInt32Array(39, 38, 37), PackedInt32Array(41, 40, 42), PackedInt32Array(42, 40, 43), PackedInt32Array(45, 44, 46), PackedInt32Array(46, 44, 47), PackedInt32Array(49, 48, 50), PackedInt32Array(50, 48, 51), PackedInt32Array(53, 52, 54), PackedInt32Array(54, 52, 55), PackedInt32Array(58, 57, 56), PackedInt32Array(61, 60, 59), PackedInt32Array(64, 63, 62), PackedInt32Array(67, 66, 65), PackedInt32Array(69, 68, 70), PackedInt32Array(70, 68, 71), PackedInt32Array(73, 72, 74), PackedInt32Array(74, 72, 75), PackedInt32Array(77, 76, 78), PackedInt32Array(78, 76, 79), PackedInt32Array(81, 80, 82), PackedInt32Array(82, 80, 83), PackedInt32Array(88, 87, 84), PackedInt32Array(84, 87, 86), PackedInt32Array(84, 86, 85), PackedInt32Array(93, 92, 89), PackedInt32Array(89, 92, 91), PackedInt32Array(89, 91, 90), PackedInt32Array(97, 96, 94), PackedInt32Array(94, 96, 95), PackedInt32Array(101, 100, 98), PackedInt32Array(98, 100, 99)]
+
 [node name="main" type="Node3D"]
-
-[node name="Field" parent="." instance=ExtResource("1_4dat0")]
-
-[node name="Coach" parent="." instance=ExtResource("2_c0p21")]
-transform = Transform3D(1, 0, 0, 0, 0.297724, 0.954652, 0, -0.954652, 0.297724, 0, 47.6293, 14.9227)
+script = ExtResource("1_8rcfh")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_y3kg5")
@@ -29,5 +29,10 @@ environment = SubResource("Environment_y3kg5")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(1, 0, 0, 0, 0.00223406, 0.999997, 0, -0.999997, 0.00223406, -0.0619354, 90.9852, -0.391458)
 
-[node name="player" parent="." instance=ExtResource("3_3nd1w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.025, 0)
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_mqyd8")
+
+[node name="Coach" parent="." instance=ExtResource("2_c0p21")]
+transform = Transform3D(1, 0, 0, 0, 0.297724, 0.954652, 0, -0.954652, 0.297724, 0, 47.6293, 14.9227)
+
+[node name="Field" parent="." instance=ExtResource("1_4dat0")]
